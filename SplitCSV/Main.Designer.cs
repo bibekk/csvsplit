@@ -58,13 +58,13 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.Size = new System.Drawing.Size(141, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Number of Rows";
+            this.label1.Text = "Number of Items in each file:";
             // 
             // btnSelectFile
             // 
-            this.btnSelectFile.Location = new System.Drawing.Point(260, 12);
+            this.btnSelectFile.Location = new System.Drawing.Point(302, 12);
             this.btnSelectFile.Name = "btnSelectFile";
             this.btnSelectFile.Size = new System.Drawing.Size(92, 23);
             this.btnSelectFile.TabIndex = 1;
@@ -75,7 +75,7 @@
             // btnSplitFile
             // 
             this.btnSplitFile.Enabled = false;
-            this.btnSplitFile.Location = new System.Drawing.Point(358, 12);
+            this.btnSplitFile.Location = new System.Drawing.Point(400, 12);
             this.btnSplitFile.Name = "btnSplitFile";
             this.btnSplitFile.Size = new System.Drawing.Size(75, 23);
             this.btnSplitFile.TabIndex = 3;
@@ -131,7 +131,7 @@
             // 
             // numNumberOfRows
             // 
-            this.numNumberOfRows.Location = new System.Drawing.Point(114, 12);
+            this.numNumberOfRows.Location = new System.Drawing.Point(156, 12);
             this.numNumberOfRows.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -247,7 +247,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(439, 12);
+            this.btnExit.Location = new System.Drawing.Point(481, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 20;
