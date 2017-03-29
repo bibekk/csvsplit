@@ -200,6 +200,8 @@ namespace SplitCSV
 
         public static void processComplete()
         {
+            lblProgressSplit.Text = "Operation complete";
+            progressSplit.Value = 0;
             MessageBox.Show("Operation Complete", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

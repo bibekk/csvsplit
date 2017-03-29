@@ -7,3 +7,12 @@ c:\users\bibek\documents\visual studio 2013\Projects\SplitCSV\SplitCSV\bin\Debug
 c:\users\bibek\documents\visual studio 2013\Projects\SplitCSV\SplitCSV\obj\Debug\SplitCSV.exe
 c:\users\bibek\documents\visual studio 2013\Projects\SplitCSV\SplitCSV\obj\Debug\SplitCSV.pdb
 C:\Users\bibek\Documents\Visual Studio 2013\Projects\SplitCSV\SplitCSV\obj\Debug\SplitCSV.csprojResolveAssemblyReference.cache
+C:\Users\bibek_karmacharya\Documents\Visual Studio 2013\Projects\SplitCSV\SplitCSV\bin\Debug\SplitCSV.exe.config
+C:\Users\bibek_karmacharya\Documents\Visual Studio 2013\Projects\SplitCSV\SplitCSV\bin\Debug\SplitCSV.exe
+C:\Users\bibek_karmacharya\Documents\Visual Studio 2013\Projects\SplitCSV\SplitCSV\bin\Debug\SplitCSV.pdb
+C:\Users\bibek_karmacharya\Documents\Visual Studio 2013\Projects\SplitCSV\SplitCSV\obj\Debug\SplitCSV.csprojResolveAssemblyReference.cache
+C:\Users\bibek_karmacharya\Documents\Visual Studio 2013\Projects\SplitCSV\SplitCSV\obj\Debug\SplitCSV.Main.resources
+C:\Users\bibek_karmacharya\Documents\Visual Studio 2013\Projects\SplitCSV\SplitCSV\obj\Debug\SplitCSV.Properties.Resources.resources
+C:\Users\bibek_karmacharya\Documents\Visual Studio 2013\Projects\SplitCSV\SplitCSV\obj\Debug\SplitCSV.csproj.GenerateResource.Cache
+C:\Users\bibek_karmacharya\Documents\Visual Studio 2013\Projects\SplitCSV\SplitCSV\obj\Debug\SplitCSV.exe
+C:\Users\bibek_karmacharya\Documents\Visual Studio 2013\Projects\SplitCSV\SplitCSV\obj\Debug\SplitCSV.pdb
