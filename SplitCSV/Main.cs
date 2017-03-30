@@ -56,6 +56,7 @@ namespace SplitCSV
                         {
                             btnSplitFile.Enabled = true;
                             chkManageHeaders.Enabled = true;
+                            lblProgressSplit.Text = "Ready";
                         }
                     }
                     else
@@ -82,6 +83,9 @@ namespace SplitCSV
      
         private void btnSplitFile_Click(object sender, EventArgs e)
         {
+            progressSplit.Visible = true;
+            lblProgressSplit.Visible = true;
+
             List<string> header_array = new List<string>();
             if (chkManageHeaders.Checked)
             {
@@ -102,6 +106,8 @@ namespace SplitCSV
         {
             addControls();
             lblFileSelected.Text = "none";
+            progressSplit.Visible = false;
+            lblProgressSplit.Visible = false;
         }
 
         private void addControls()
@@ -200,8 +206,9 @@ namespace SplitCSV
 
         public static void processComplete()
         {
-            lblProgressSplit.Text = "Operation complete";
+            lblProgressSplit.Visible = false;
             progressSplit.Value = 0;
+            progressSplit.Visible = false;
             MessageBox.Show("Operation Complete", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
