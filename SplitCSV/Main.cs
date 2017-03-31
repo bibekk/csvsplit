@@ -16,7 +16,11 @@ namespace SplitCSV
         public static int totalrows;
         public static ProgressBar progressSplit;
         public static Label lblProgressSplit;
+        public static Button btnCancel;
+        public static bool flag = false;
 
+
+        
         public Main()
         {
             InitializeComponent();
@@ -85,6 +89,8 @@ namespace SplitCSV
         {
             progressSplit.Visible = true;
             lblProgressSplit.Visible = true;
+            Main.btnCancel.Visible = true;
+            Main.flag = false;
 
             List<string> header_array = new List<string>();
             if (chkManageHeaders.Checked)
@@ -100,6 +106,7 @@ namespace SplitCSV
             }
             CSVManager.splitCSV(file_name, Int16.Parse(numNumberOfRows.Value.ToString()), header_array.ToArray());
             progressSplit.Value = 0;
+
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -121,12 +128,33 @@ namespace SplitCSV
             progressSplit.TabIndex = 17;
             this.Controls.Add(progressSplit);
 
-
+            //progress label
             lblProgressSplit = new Label();
             lblProgressSplit.Location = new System.Drawing.Point(7, 300);
             lblProgressSplit.Name = "lblProgressSplit";
             lblProgressSplit.Size = new System.Drawing.Size(622, 23);
             this.Controls.Add(lblProgressSplit);
+
+            // btnCancel
+            // 
+            btnCancel = new Button();
+            btnCancel.BackColor = System.Drawing.Color.Red;
+            btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btnCancel.Location = new System.Drawing.Point(560, 12);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new System.Drawing.Size(75, 23);
+            btnCancel.TabIndex = 21;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Visible = false;
+            this.Controls.Add(btnCancel);
+
+            btnCancel.Click += btnCancel_Click;
+        }
+
+        void btnCancel_Click(object sender, EventArgs e)
+        {
+            flag = true;
         }
 
         private void btnMoveSelected_Click(object sender, EventArgs e)
@@ -204,12 +232,21 @@ namespace SplitCSV
             getSummary();
         }
 
-        public static void processComplete()
+        public static void processComplete(string type="Complete")
         {
             lblProgressSplit.Visible = false;
             progressSplit.Value = 0;
             progressSplit.Visible = false;
-            MessageBox.Show("Operation Complete", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnCancel.Visible = false;
+
+            if (type == "Complete")
+            {
+                MessageBox.Show("Operation Complete", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Operation Canceled", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -217,7 +254,6 @@ namespace SplitCSV
             this.Close();
         }
 
-        
        
     }
 }

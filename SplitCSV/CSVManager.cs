@@ -54,7 +54,7 @@ namespace SplitCSV
             }
             catch (Exception ex)
             {
-                // Debug.WriteLine(ex.Message);  
+                Console.WriteLine(ex.Message);
             }
             finally
             {
@@ -116,6 +116,13 @@ namespace SplitCSV
                 if ((int)tt == 100)
                 {
                     Main.processComplete();
+
+                }
+
+                if (Main.flag)
+                {
+                    Main.processComplete(type:"Cancel");
+                    break;
                 }
             }
 
