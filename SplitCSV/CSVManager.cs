@@ -90,7 +90,7 @@ namespace SplitCSV
                 {
                     fileCounter++;
                     string splits = Math.Ceiling((double)totalitems / (double)numberOfRows).ToString();
-                    Main.lblProgressSplit.Text ="writing " + fileCounter.ToString() + " of " + splits;
+                    Main.lblProgressSplit.Text ="Writing " + fileCounter.ToString() + " of " + splits;
 
                     await writeCSV(file_name, fileCounter.ToString(), string.Join(",", headers));
                 }

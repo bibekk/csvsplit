@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SplitCSV")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Simple CSV file Splitter")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("Bibek")]
 [assembly: AssemblyProduct("SplitCSV")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2015")]
 [assembly: AssemblyTrademark("")]

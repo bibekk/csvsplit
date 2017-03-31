@@ -79,9 +79,9 @@ namespace SplitCSV
         private void getSummary()
         {
             int numberofrowspercsv = Int16.Parse(numNumberOfRows.Value.ToString());
-            lblCSVNo.Text = "Total Items: " + totalrows + "\n" +
-                "Items in each splitted file: " + numNumberOfRows.Value.ToString() + "\n" +
-             "Total Splits: " + Math.Ceiling((double)totalrows / (double)numberofrowspercsv).ToString();
+            lblCSVNo.Text = "Total Items                       : " +string.Format("{0:n0}",totalrows) + "\n" +
+                "Items in each splitted file : " + string.Format("{0:n0}", numNumberOfRows.Value)+ "\n" +
+             "Total Splits                       : " + string.Format("{0:n0}", Math.Ceiling((double)totalrows / (double)numberofrowspercsv));
         }
 
      
@@ -122,32 +122,36 @@ namespace SplitCSV
             // progressSplit
             // 
             progressSplit = new ProgressBar();
-            progressSplit.Location = new System.Drawing.Point(7, 317);
+            progressSplit.Location = new System.Drawing.Point(15, 400);
             progressSplit.Name = "progressSplit";
-            progressSplit.Size = new System.Drawing.Size(622, 23);
+            progressSplit.Size = new System.Drawing.Size(735, 10);
             progressSplit.TabIndex = 17;
-            this.Controls.Add(progressSplit);
+            this.Controls.Add(progressSplit); 
 
             //progress label
             lblProgressSplit = new Label();
-            lblProgressSplit.Location = new System.Drawing.Point(7, 300);
+            lblProgressSplit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblProgressSplit.Location = new System.Drawing.Point(15, 377);
             lblProgressSplit.Name = "lblProgressSplit";
-            lblProgressSplit.Size = new System.Drawing.Size(622, 23);
+            lblProgressSplit.Size = new System.Drawing.Size(652, 23);
             this.Controls.Add(lblProgressSplit);
+
 
             // btnCancel
             // 
             btnCancel = new Button();
+            btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnCancel.BackColor = System.Drawing.Color.Red;
             btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            btnCancel.Location = new System.Drawing.Point(560, 12);
+            btnCancel.Location = new System.Drawing.Point(644, 15);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new System.Drawing.Size(75, 23);
+            btnCancel.Size = new System.Drawing.Size(93, 39);
             btnCancel.TabIndex = 21;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Visible = false;
             this.Controls.Add(btnCancel);
+
 
             btnCancel.Click += btnCancel_Click;
         }
@@ -253,6 +257,8 @@ namespace SplitCSV
         {
             this.Close();
         }
+
+      
 
        
     }
