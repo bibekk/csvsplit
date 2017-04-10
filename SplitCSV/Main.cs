@@ -19,7 +19,6 @@ namespace SplitCSV
         public static Button btnCancel;
         public static bool flag = false;
 
-
         
         public Main()
         {
@@ -87,10 +86,15 @@ namespace SplitCSV
      
         private void btnSplitFile_Click(object sender, EventArgs e)
         {
+            tmrControl.Enabled = true;
             progressSplit.Visible = true;
             lblProgressSplit.Visible = true;
             Main.btnCancel.Visible = true;
             Main.flag = false;
+
+            btnSelectFile.Enabled = false;
+            btnExit.Enabled= false;
+            btnSplitFile.Enabled = false;
 
             List<string> header_array = new List<string>();
             if (chkManageHeaders.Checked)
@@ -159,6 +163,8 @@ namespace SplitCSV
         void btnCancel_Click(object sender, EventArgs e)
         {
             flag = true;
+
+            EnableButtons(this);
         }
 
         private void btnMoveSelected_Click(object sender, EventArgs e)
@@ -253,13 +259,29 @@ namespace SplitCSV
             }
         }
 
+
+        public static void EnableButtons(Main form)
+        {
+            form.btnSelectFile.Enabled = true;
+            form.btnExit.Enabled = true;
+            form.btnSplitFile.Enabled = true;
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private void tmrControl_Tick(object sender, EventArgs e)
+        {
+            if (!lblProgressSplit.Visible)
+            {
+                btnSplitFile.Enabled = true;
+                btnExit.Enabled = true;
+                btnSelectFile.Enabled = true;
+                tmrControl.Enabled = false;
+            }
+        }
       
-
-       
     }
 }

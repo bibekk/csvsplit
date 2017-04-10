@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.openCSVFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.lblCSVNo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
+            this.tmrControl = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numNumberOfRows)).BeginInit();
             this.groupHeaders.SuspendLayout();
             this.groupCalc.SuspendLayout();
@@ -69,7 +71,7 @@
             this.btnSelectFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelectFile.Location = new System.Drawing.Point(330, 15);
             this.btnSelectFile.Name = "btnSelectFile";
-            this.btnSelectFile.Size = new System.Drawing.Size(110, 39);
+            this.btnSelectFile.Size = new System.Drawing.Size(111, 39);
             this.btnSelectFile.TabIndex = 1;
             this.btnSelectFile.Text = "Select File";
             this.btnSelectFile.UseVisualStyleBackColor = true;
@@ -79,7 +81,7 @@
             // 
             this.btnSplitFile.Enabled = false;
             this.btnSplitFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSplitFile.Location = new System.Drawing.Point(446, 15);
+            this.btnSplitFile.Location = new System.Drawing.Point(447, 15);
             this.btnSplitFile.Name = "btnSplitFile";
             this.btnSplitFile.Size = new System.Drawing.Size(93, 39);
             this.btnSplitFile.TabIndex = 3;
@@ -108,7 +110,7 @@
             // 
             // btnMoveSelected
             // 
-            this.btnMoveSelected.Location = new System.Drawing.Point(206, 59);
+            this.btnMoveSelected.Location = new System.Drawing.Point(207, 59);
             this.btnMoveSelected.Name = "btnMoveSelected";
             this.btnMoveSelected.Size = new System.Drawing.Size(59, 23);
             this.btnMoveSelected.TabIndex = 7;
@@ -118,7 +120,7 @@
             // 
             // btnMoveLeft
             // 
-            this.btnMoveLeft.Location = new System.Drawing.Point(206, 97);
+            this.btnMoveLeft.Location = new System.Drawing.Point(207, 97);
             this.btnMoveLeft.Name = "btnMoveLeft";
             this.btnMoveLeft.Size = new System.Drawing.Size(59, 23);
             this.btnMoveLeft.TabIndex = 8;
@@ -169,7 +171,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(272, 32);
+            this.label3.Location = new System.Drawing.Point(273, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 15);
             this.label3.TabIndex = 12;
@@ -177,7 +179,7 @@
             // 
             // btnMoveAll
             // 
-            this.btnMoveAll.Location = new System.Drawing.Point(206, 136);
+            this.btnMoveAll.Location = new System.Drawing.Point(207, 136);
             this.btnMoveAll.Name = "btnMoveAll";
             this.btnMoveAll.Size = new System.Drawing.Size(59, 23);
             this.btnMoveAll.TabIndex = 13;
@@ -187,7 +189,7 @@
             // 
             // btnMoveAllLeft
             // 
-            this.btnMoveAllLeft.Location = new System.Drawing.Point(206, 177);
+            this.btnMoveAllLeft.Location = new System.Drawing.Point(207, 177);
             this.btnMoveAllLeft.Name = "btnMoveAllLeft";
             this.btnMoveAllLeft.Size = new System.Drawing.Size(59, 23);
             this.btnMoveAllLeft.TabIndex = 14;
@@ -233,7 +235,7 @@
             this.groupCalc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupCalc.Location = new System.Drawing.Point(486, 133);
             this.groupCalc.Name = "groupCalc";
-            this.groupCalc.Size = new System.Drawing.Size(262, 235);
+            this.groupCalc.Size = new System.Drawing.Size(261, 235);
             this.groupCalc.TabIndex = 18;
             this.groupCalc.TabStop = false;
             this.groupCalc.Text = "File Summary";
@@ -268,6 +270,11 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // tmrControl
+            // 
+            this.tmrControl.Interval = 10;
+            this.tmrControl.Tick += new System.EventHandler(this.tmrControl_Tick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,6 +290,7 @@
             this.Controls.Add(this.btnSelectFile);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupHeaders);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -322,6 +330,7 @@
         private System.Windows.Forms.Label lblCSVNo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Timer tmrControl;
     }
 }
 
