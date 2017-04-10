@@ -269,7 +269,16 @@ namespace SplitCSV
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            var input = MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (input == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+
+            }
         }
 
         private void tmrControl_Tick(object sender, EventArgs e)
