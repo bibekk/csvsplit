@@ -83,18 +83,17 @@ namespace SplitCSV
             count = 0;
 
             int fileCounter = 0;
+            string splits = string.Empty;
 
             foreach (var s in temp)
             {
                 if (count == 0 || (count % (numberOfRows)) == 0)
                 {
                     fileCounter++;
-                    string splits = Math.Ceiling((double)totalitems / (double)numberOfRows).ToString();
-                    Main.lblProgressSplit.Text = "Writing " + fileCounter.ToString() + " of " + splits;
-
-                    await writeCSV(file_name, fileCounter.ToString(), string.Join(",", headers));
+                    splits = Math.Ceiling((double)totalitems / (double)numberOfRows).ToString();
+                      await writeCSV(file_name, fileCounter.ToString(), string.Join(",", headers));
                 }
-
+             
                 var t = s.Split('#');
                 string row = string.Empty;
                 for (var i = 1; i <= headers.Length; i++)
@@ -111,6 +110,8 @@ namespace SplitCSV
                 await writeCSV(file_name, fileCounter.ToString(), row);
                 count++;
                 var tt = (double)count / (double)(Main.totalrows) * 100;
+                Main.lblProgressSplit.Text = "Writing " + fileCounter.ToString() + " of " + splits + " files (" + Math.Ceiling(tt) + "%)";
+
                 Main.progressSplit.Value = (int)tt;
 
                 if ((int)tt == 100)

@@ -91,6 +91,7 @@ namespace SplitCSV
             lblProgressSplit.Visible = true;
             Main.btnCancel.Visible = true;
             Main.flag = false;
+            chkManageHeaders.Enabled = false;
 
             btnSelectFile.Enabled = false;
             btnExit.Enabled= false;
@@ -137,7 +138,7 @@ namespace SplitCSV
             lblProgressSplit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblProgressSplit.Location = new System.Drawing.Point(15, 377);
             lblProgressSplit.Name = "lblProgressSplit";
-            lblProgressSplit.Size = new System.Drawing.Size(652, 23);
+            lblProgressSplit.Size = new System.Drawing.Size(735, 23);
             this.Controls.Add(lblProgressSplit);
 
 
